@@ -1,33 +1,66 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import {AnimatePresence, motion} from 'framer-motion'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation
+} from "react-router-dom";
+
+import { Register } from './pages/Register'
+import { Login } from './pages/Login'
+import { Error404 } from './pages/Error404';
+import { Home } from './pages/Home';
+import { Footer } from './components/Footer';
+import { Project } from './pages/Project';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const location = useLocation()
+
+  const pageTransition: any = {
+    in: {
+      opacity: 1,
+    },
+    out: {
+      opacity: 0,
+    },
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <AnimatePresence>
+    
+      
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={
+          <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
+            <Home/>
+          </motion.div>} 
+        />
+        <Route path="/register" element={
+          <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
+            <Register/>
+          </motion.div>} 
+        />
+        <Route path="/login" element={
+          <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
+            <Login/>
+          </motion.div>} 
+        />
+
+        <Route path="/project" element={
+          <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
+            <Project/>
+          </motion.div>} 
+        />
+
+        <Route path="*" element={
+          <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
+            <Error404/>
+          </motion.div>} 
+        />
+      </Routes>
+    </AnimatePresence>
   )
 }
 
