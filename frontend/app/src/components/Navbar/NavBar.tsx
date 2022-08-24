@@ -4,20 +4,20 @@ import {
 
 export const NavBar = () => {
   return (
-    <div className="shadow-md ">
-        <nav>
-            <ul className="h-12 flex justify-end items-center text-white bg-blue-500">
-                <li className="pr-4">
-                    <Link to="/">Home</Link>
-                </li>
+    <header>
+        <nav className="flex  items-center justify-between text-white h-12  bg-blue-500">
+            <div className='text-2xl ml-8'>
+                <Link to="/">AppTasks</Link>
+            </div>
+            <ul className=" flex ">
                 <li className="pr-4">
                     <Link to="/login">Register</Link>
                 </li>
-                <li className="pr-4">
-                    <Link to="/users">Projects</Link>
+                <li className="pr-8">
+                    <Link to="/project">Projects</Link>
                 </li>
             </ul>
         </nav>
-    </div>
+    </header>
   )
 }

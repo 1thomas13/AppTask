@@ -6,19 +6,19 @@ import { Footer } from '../components/Footer';
 
 export const Home = () => {
   return (
-    <>
+    <div className='h-screen '>
         <NavBar/>
       
             
-        <main className='w-screen flex flex-col  items-center'>
+        <main className='h-full bg-gradient-to-t text-white from-cyan-100 to-blue-500  flex flex-col  items-center'>
             <h1 className='text-3xl flex items-center mt-8 mb-2'>AppTasks <BiTask className='ml-2'/></h1>
             <h2 className='text-2xl'>Te ayudamos a Organizarte para que cumplas tus <span className='font-bold'>objetivos</span>!</h2>
-            <h5 className='text-3xl text-blue-700 my-8 '>
+            <h5 className='text-3xl text-white font-bold my-8 '>
                 Tus Proyectos
             </h5>
             <div className='flex'>
                 <Link to='/project/123451'>
-                <div className='m-3 p-8 bg-white rounded-xl text-center hover:cursor-pointer flex flex-col items-center'>
+                <div className='shadow-2xl m-3 p-8 text-black bg-white rounded-xl text-center hover:cursor-pointer flex flex-col items-center'>
                     <h5 className='font-semibold mb-4 text-xl'>sprint 1</h5>
                     <p className='text-sm bg-green-400 text-white p-2 rounded'> 3/3 tareas completadas</p>
                     <div className='text-sm flex items-center mt-2'> 
@@ -26,13 +26,13 @@ export const Home = () => {
                     </div>
                 </div>
                 </Link>
-                <div className='m-3 p-8 text-sm justify-center bg-white rounded-xl text-center hover:cursor-pointer hover:text-black flex flex-col items-center'>
+                <div className='shadow-2xl m-3 p-8 text-sm justify-center bg-white rounded-xl text-center hover:cursor-pointer hover:text-black flex flex-col items-center'>
                    <button className='text-3xl text-gray-500'>+</button>
                 </div>
             </div>
         </main>
         
         <Footer/>
-    </>
+    </div>
   )
 }
