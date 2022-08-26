@@ -3,13 +3,24 @@ import {BsFillPersonFill} from 'react-icons/bs'
 import { BiTask } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
+import { Modal } from '../components/Modal'
+import { useState } from 'react';
+import { FormAddProject } from '../components/FormAddProject';
 
 export const Home = () => {
+
+const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openCloseModal() {
+    setIsOpen(!modalIsOpen);
+  }
+
   return (
     <div className='h-screen '>
         <NavBar/>
       
             
+
         <main className='h-full bg-gradient-to-t text-white from-cyan-100 to-blue-500  flex flex-col  items-center'>
             <h1 className='text-3xl flex items-center mt-8 mb-2'>AppTasks <BiTask className='ml-2'/></h1>
             <h2 className='text-2xl'>Te ayudamos a Organizarte para que cumplas tus <span className='font-bold'>objetivos</span>!</h2>
@@ -26,9 +37,11 @@ export const Home = () => {
                     </div>
                 </div>
                 </Link>
-                <div className='shadow-2xl m-3 p-8 text-sm justify-center bg-white rounded-xl text-center hover:cursor-pointer hover:text-black flex flex-col items-center'>
-                   <button className='text-3xl text-gray-500'>+</button>
-                </div>
+                <Modal openCloseModal={openCloseModal} modalIsOpen={modalIsOpen}> 
+                    <>
+                        <FormAddProject/>
+                    </>
+                </Modal>
             </div>
         </main>
         
