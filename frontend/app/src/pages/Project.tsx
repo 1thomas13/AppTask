@@ -1,12 +1,14 @@
 import React from "react";
 import { NavBar } from "../components/Navbar/NavBar";
+import {FaCommentAlt} from 'react-icons/fa'
 
 export const Project = () => {
   return (
-    <div className="h-screen">
+    <>
       <NavBar/>
+      <div className="h-screen bg-gradient-to-b from-blue-500 via-purple-500 to-pink-300">
       <div className="flex h-full">
-        <section className="w-1/5 ">
+        <section className="w-1/5 bg-black opacity-30 shadow-xl">
           proyectos
           <div>sprin1 </div>
           <div>sprin1 </div>
@@ -16,24 +18,77 @@ export const Project = () => {
           <div>sprin1 </div>
           <div>sprin1 </div>
         </section>
-        <main className="w-full flex justify-evenly bg-gradient-to-t text-black from-cyan-300 to-blue-500">
-          <div className="bg-slate-100 w-1/5 rounded-xl m-10 shadow-md">
-            <h3 className="text-center text-xl font-bold">Por Hacer</h3>
-            <div className='shadow-xl m-3 p-8 text-black bg-white rounded-xl text-center hover:cursor-pointer flex flex-col items-center'>
-              <h5 className='font-semibold mb-4 w-full text-xl'>sprint 1</h5>
-               
+        <main className="w-full text-gray-800">
+          <div className="w-full">
+          ordenar por fecha
+          </div>
+          <div className="flex">
+            <div className="p-2 bg-slate-200 rounded-md m-10 shadow-2xl">
+              <h3 className="text-md font-semibold uppercase px-2 ">Por Hacer</h3>
+              <div className='my-4 w-72 border-b-2 shadow-innerl py-2 hover:bg-slate-100 bg-white rounded-md text-center hover:cursor-pointer flex flex-col items-center'>
+                <h5 className='font-semibold w-full text-xl'>sprint 1</h5>
+                creado: 8 de sept
+                <div className="flex items-center">
+                  <span className="mr-2 font-semibold">5</span> 
+                  <FaCommentAlt />
+                  
+                </div>
+              </div>
+              
+                <button>
+                  <div className='text-xl text-gray-600 font-bold hover:bg-slate-100 hover:text-black   w-72 border-b-2 shadow-innerl py-2  rounded-md text-center flex flex-col items-center'>
+                    +
+                  </div>
+                </button>
+              
+            </div>
+
+            <div className="p-2 bg-slate-200 rounded-md m-10 shadow-2xl">
+              <h3 className="text-md font-semibold uppercase px-2 ">Por Hacer</h3>
+              <div className='my-4 w-72 border-b-2 shadow-innerl py-2 hover:bg-slate-100 bg-white rounded-md text-center hover:cursor-pointer flex flex-col items-center'>
+                <h5 className='font-semibold w-full text-xl'>sprint 1</h5>
+                creado: 8 de sept
+                <div className="flex items-center">
+                  <span className="mr-2 font-semibold">5</span> 
+                  <FaCommentAlt />
+                  
+                </div>
+              </div>
+              
+                <button>
+                  <div className='text-xl text-gray-600 font-bold hover:bg-slate-100 hover:text-black   w-72 border-b-2 shadow-innerl py-2  rounded-md text-center flex flex-col items-center'>
+                    +
+                  </div>
+                </button>
+              
+            </div>
+
+            <div className="p-2 bg-slate-200 rounded-md m-10 shadow-2xl">
+              <h3 className="text-md font-semibold uppercase px-2 ">Por Hacer</h3>
+              <div className='my-4 w-72 border-b-2 shadow-innerl py-2 hover:bg-slate-100 bg-white rounded-md text-center hover:cursor-pointer flex flex-col items-center'>
+                <h5 className='font-semibold w-full text-xl'>sprint 1</h5>
+                creado: 8 de sept
+                <div className="flex items-center">
+                  <span className="mr-2 font-semibold">5</span> 
+                  <FaCommentAlt />
+                  
+                </div>
+              </div>
+              
+                <button>
+                  <div className='text-xl text-gray-600 font-bold hover:bg-slate-100 hover:text-black   w-72 border-b-2 shadow-innerl py-2  rounded-md text-center flex flex-col items-center'>
+                    +
+                  </div>
+                </button>
+              
             </div>
           </div>
-          <div className="bg-gray-100 w-1/5">
-            <h3>Realizando</h3>
-          </div>
-          <div className="bg-red-200 w-1/5">
-            <h3>hecho</h3>
-          </div>
+          
+          
         </main>
         
       </div>
-      
-    </div>
+      </div>
+    </>
   );
 };
